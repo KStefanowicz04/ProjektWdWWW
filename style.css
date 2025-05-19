@@ -41,44 +41,40 @@ footer {
 }
 
 /* Pasek nawigacji */
-nav {
-    
-    background-color:#1e3a8a);
-    border-bottom:4px solid #0f172a;
+nav.navbar {
+    background-color: #1e3a8a;
+    border-bottom: 4px solid #0f172a;
+    padding: 12px 16px;
 
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px 16px;
-   
 }
 
-/* W klasie navbar */
-/*  */
-/* Linki w navbar */
-.navbar a {
-    color:rgba(39, 39, 39, 0.84);
-}
-
-/* Listy w navbar */
-/* Unordered list */
 .navbar ul {
-    /* Wycentrowanie */
-    text-align: center;
-}
-/* Ordered list */
-.navbar ol {
-    display: block;
-}
-/* Elementy listy */
-.navbar li {
-    /* Styl punktów */
-    list-style-type: georgian;
-    /* Usunięcie wcięć */
+    list-style: none;           /* Usuwa kropki */
+    display: flex;              /* Układa elementy poziomo */
+    gap: 32px;                  /* Odstępy między zakładkami */
     margin: 0;
     padding: 0;
-    /* Rozłożenie poziomo */
-    display: inline-block;
-    padding: 15px;
-    float: left;
+}
+
+.navbar li {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
 }
