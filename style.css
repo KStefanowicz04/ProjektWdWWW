@@ -14,6 +14,7 @@ header {
     /* Tło */
     background-color:#1e3a8a;
     color: #ffffff;
+    display:flex;
 
     /* Ramka */
     text-algin: center;
@@ -39,6 +40,13 @@ footer {
     margin-top: 32px;
 
 }
+#logo{
+border-radius: 50%;
+height: 100px;
+
+}
+
+
 
 /* Pasek nawigacji */
 nav.navbar {
