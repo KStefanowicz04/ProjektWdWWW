@@ -37,23 +37,20 @@ footer {
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
     margin-top: 32px;
-    
+
 }
 
 /* Pasek nawigacji */
 nav {
-    /* Tło */
-    background-color:rgb(132, 132, 132);
     
-    /* Border */
-    border:rgba(96, 108, 134);
-    border-style: groove;
-    border-width: 8px;
+    background-color:#1e3a8a);
+    border-bottom:4px solid #0f172a;
 
-    /* Rozmieszczenie poziome */
-    display: flex; /* Flexbox */
-    text-align: center;
-
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+   
 }
 
 /* W klasie navbar */
