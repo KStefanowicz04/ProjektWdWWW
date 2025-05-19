@@ -12,13 +12,14 @@ body {
 /* Styl nagłówka */
 header {
     /* Tło */
-    background-color:rgb(55, 55, 55);
+    background-color:#1e3a8a;
     color: #ffffff;
 
     /* Ramka */
-    padding: 3px;
-    border:rgb(52, 52, 52);
-    border-bottom-style: solid;
+    text-algin: center;
+    padding: 2rem 1rem;
+    border-bottom: 4px solid #0f172a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0.2);
 }
 
 /* Styl stopki */
