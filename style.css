@@ -17,7 +17,7 @@ header {
 
     /* Ramka */
     text-algin: center;
-    padding: 2rem 1rem;
+    padding: 32px 16px;
     border-bottom: 4px solid #0f172a;
     box-shadow: 0 4px 8px rgba(0, 0, 0,0.2);
 }
@@ -29,13 +29,15 @@ footer {
     color: #000000;
 
     /* Ramka */
-    padding: 3px;
-    border: #484848;
-    border-style: solid;
+    padding: 16px;
+    border-top: 1px solid #484848;
 
     /* Tekst */
-    font-size: 13px;
+    font-size: 15px;
     text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: 32px;
+    
 }
 
 /* Pasek nawigacji */
