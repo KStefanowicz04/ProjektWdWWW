@@ -1,12 +1,14 @@
+/* Style podstawowych elementów strony */
+
 
 /* Styl ciała */
 body {
-    
+    font-family: Arial; 
     border: ridge 4px rgb(53, 53, 53);
+    padding: 20px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 100%;
     background-color: rgb(238, 238, 238);
-
 }
 
 /* Styl nagłówka */
@@ -39,16 +41,48 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
     margin-top: 32px;
 
-    /* Wiele spacji w stopce nie jest zamienione na jedną spację */
+    /* Wiele spacji w stopce nie zostanie zamienione na jedną spację */
     white-space: pre-wrap;
 }
-#logo{
-border-radius: 50%;
-height: 100px;
 
+
+
+/* Style mniejszych elementów strony */
+
+h1 { 
+    text-align: center; 
+}
+
+/* Styl tabel */
+table {
+    
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+/* Styl komórki oraz nagłówka w tabeli */
+th, td {
+    border: 1px solid #020101;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Styl nagłówka w tabeli */
+th { 
+    background-color: #1e3a8a; 
+    color: white; 
 }
 
 
+
+/* Górny pasek strony */
+
+/* Logo strony */
+#logo {
+    border-radius: 50%;
+    height: 100px;
+}
 
 /* Pasek nawigacji */
 nav.navbar {
@@ -60,7 +94,7 @@ nav.navbar {
     justify-content: center;
     align-items: center;
 }
-
+/* Unsorted list w pasku nawigacji */
 .navbar ul {
     list-style: none;           
     display: flex;              
@@ -68,11 +102,13 @@ nav.navbar {
     padding: 0;
 }
 
+/* List element w pasku nawigacji */
 .navbar li {
     margin: 0;
     padding: 0;
 }
 
+/* Linki w pasku nawigacji */
 .navbar a {
     color: #f8f8f8;
     text-decoration: none;
@@ -83,38 +119,25 @@ nav.navbar {
     transition: background-color 0.3s ease;
 }
 
+/* Najechanie na link w pasku nawigacji */
 .navbar a:hover {
     background-color: #3b82f6;
     color: #ffffff;
 }
-body { 
-    font-family: Arial; 
-    padding: 20px; 
-}
-h1 { 
-    text-align: center; 
-}
-.filter { 
+
+
+
+/* Style dla strony zasoby.html */
+
+/* Sekcja wyszukiwania tytułów na stronie zasoby.html */
+.filtrowanie { 
     margin-bottom: 20px; 
     text-align: center; 
 }
+
+/* Pole tekstowe wyszukiwania */
 input, select {
     padding: 8px;
     font-size: 16px;
     margin: 5px;
-    }
-table {
-    
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    }
-th, td {
-    border: 1px solid #020101;
-    padding: 10px;
-    text-align: left;
-}
-th { 
-    background-color: #1e3a8a; 
-    color: white; 
 }
