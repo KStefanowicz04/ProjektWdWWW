@@ -39,6 +39,8 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
     margin-top: 32px;
 
+    /* Wiele spacji w stopce nie jest zamienione na jedną spację */
+    white-space: pre-wrap;
 }
 #logo{
 border-radius: 50%;

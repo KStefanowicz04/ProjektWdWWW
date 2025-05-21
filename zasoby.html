@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     
     <meta charset="UTF-8">
-    <title>Strona startowa projektu</title>
+    <title>Zasoby</title>
 
 </head>
 
@@ -16,11 +16,11 @@
     <header>
         
         <img src="images/logo.png" alt="Logo Studendorium" id="logo" >
-        <h1>Studentorium- Biblioteka i centrum wiedzy dla studentów</h1>
+        <h1>Studentorium - Biblioteka i centrum wiedzy dla studentów</h1>
         
     </header>
 
-    
+    <!-- Pasek nawigacji -->
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Start</a></li>
@@ -34,7 +34,7 @@
     
     <main>
 
-        
+        <!-- Wyszukiwanie -->
         <section class="filter">
             <h2>Lista książek dostępnych w bibliotece</h2>
             <input type="text" id="searchInput" placeholder="Szukaj tytułu..." />
@@ -48,8 +48,9 @@
             </select>
         </section>
 
+    <!-- Lista książek -->
+    <section class="book-list">
 
-        <section class="book-list">
         <table>
             <thead>
                 <tr>
@@ -58,21 +59,21 @@
                     <th>Kategoria</th>
                 </tr>
             </thead>
+
             <tbody id="book">
-            
+
             </tbody>
         </table>
         
     </section>
 
-        
-
     </main>
 
+
     <footer>
-        <h2>Łukasz Piotrowski, Kacper Stefanowicz</h2>
-        
+        <h2>Łukasz&nbspPiotrowski     Kacper&nbspStefanowicz</h2>
     </footer>
+
 <script src="script.js"></script>
 </body>
 
