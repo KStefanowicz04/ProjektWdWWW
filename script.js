@@ -69,8 +69,17 @@ categorySelect.addEventListener("change", filterBooks);
 renderBooks(books)
 
 
+
+// Sprawdza czy DarkMode jest włączony
+function CheckDarkMode() {
+  if (localStorage.getItem("DarkMode") === "true") {
+    document.body.classList.add("dark-mode");
+  }
+}
+
 // Włącz/wyłącz dark mode
 function toggleDarkMode() {
-  var element = document.body;
-  element.classList.toggle("dark-mode");
-} 
+  var DarkModeOn = document.body.classList.toggle("dark-mode"); 
+
+  localStorage.setItem("DarkMode", DarkModeOn ? "true" : "false");
+}
