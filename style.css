@@ -8,7 +8,8 @@ body {
     padding: 20px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 100%;
-    background-color: rgb(238, 238, 238);
+    background-color: #d9d9d9;
+    color: #454545;
 }
 
 /* Styl nagłówka */
@@ -53,7 +54,7 @@ h1 {
     text-align: center; 
 }
 
-/* Styl tabel */
+/* Styl tabeli */
 table {
     
     width: 100%;
@@ -71,7 +72,24 @@ th, td {
 /* Styl nagłówka w tabeli */
 th { 
     background-color: #1e3a8a; 
-    color: white; 
+    color: #f2f2f2; 
+}
+
+/* Styl przycisku */
+button {
+  background-color: #2757dc;
+  border: 2px solid #183072;;
+  color: #f2f2f2;
+  padding: 7px 7px;
+  text-align: center;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+    background-color: #3b82f6;
+    border: 2px solid #2757dc;;
+    color: #f2f2f2;
+    box-shadow: 2px 2px 2px #0f172a;
 }
 
 
@@ -115,7 +133,7 @@ th {
 
 /* Linki w pasku nawigacji */
 .navbar a {
-    color: #f8f8f8;
+    color: #f2f2f2;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -182,4 +200,28 @@ input, select {
     .view {
         width: 1800px;
     }
+}
+
+
+
+/* Dark mode */
+.dark-mode {
+  background-color: #1d1d1d;
+  color: #d9d9d9;
+}
+
+/* Dark mode stopki */
+.dark-mode footer {
+    background-color: rgb(57, 57, 57);
+    color: #d9d9d9;
+}
+
+/* Przycisk Dark Mode */
+.darkmodebutton {
+    margin-left: auto; 
+    margin-right: 0;
+}
+.darkmodebutton button {
+    position: relative;
+    top: 45%;
 }

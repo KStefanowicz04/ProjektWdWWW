@@ -1,3 +1,4 @@
+// Ksiązki
 const books = [
   // Komedia
     { title: "Dziennik Bridget Jones", author: "Helen Fielding", category: "Komedia" },
@@ -66,3 +67,10 @@ categorySelect.addEventListener("change", filterBooks);
 
 
 renderBooks(books)
+
+
+// Włącz/wyłącz dark mode
+function toggleDarkMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+} 
