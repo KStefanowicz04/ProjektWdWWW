@@ -76,7 +76,7 @@ th {
 
 
 
-/* Górny pasek strony */
+/* Górny pasek strony - logo, tytuł, pasek nawigacji */
 
 /* Logo strony */
 #logo {
@@ -85,24 +85,29 @@ th {
 }
 
 /* Pasek nawigacji */
-nav.navbar {
+.navbar {
     background-color: #1e3a8a;
     border-bottom: 4px solid #0f172a;
     padding: 12px 16px;
 
+    /* Flexbox */
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    margin: auto;
     align-items: center;
+    flex-wrap: nowrap;
 }
-/* Unsorted list w pasku nawigacji */
+
+/* Nieposortowana lista w pasku nawigacji */
 .navbar ul {
-    list-style: none;           
+    list-style: none;     
     display: flex;              
     gap: 32px;                  
     padding: 0;
 }
 
-/* List element w pasku nawigacji */
+/* Elementy list w pasku nawigacji */
 .navbar li {
     margin: 0;
     padding: 0;
@@ -140,4 +145,41 @@ input, select {
     padding: 8px;
     font-size: 16px;
     margin: 5px;
+}
+
+
+
+/* Responsywność strony zależnie od rozmiaru ekranu */
+/* Telefony */
+@media screen and (max-width: 480px) {
+    .view {
+        width: 400px;
+    }
+}
+
+/* Tablety */
+@media screen and (max-width: 768px) {
+    .view {
+        width: 700px;
+    }
+
+    /* Poniżej 768px, pasek nawigacji jest zamieniany w kolumnę */
+    .navbar, .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mniejsze ekrany */
+@media screen and (max-width: 1024px) {
+    .view {
+        width: 1000px;
+    }
+}
+
+/* Większe ekrany */
+@media screen and (max-width: 1200px) {
+    .view {
+        width: 1800px;
+    }
 }
