@@ -99,6 +99,7 @@ button:hover {
 #logo {
     border-radius: 50%;
     height: 100px;
+    width: 100px;
 }
 
 /* Pasek nawigacji */
@@ -230,5 +231,13 @@ input, select {
     padding: 15px 50px;
 }
 .oNas>h2{
+    text-align: center;
+}
+/*margines wewnętrzny */
+.flex-container{
+    padding: 20px;
+}
+/*wyrównanie h2 w kontakt */
+.flex-container>h2{
     text-align: center;
 }
