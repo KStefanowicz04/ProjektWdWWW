@@ -5,10 +5,9 @@
 body {
     font-family: Arial; 
     border: ridge 4px rgb(53, 53, 53);
-    padding: 20px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 100%;
-    background-color: #d9d9d9;
+    background-color: #ffffff;
     color: #454545;
 }
 
@@ -224,4 +223,11 @@ input, select {
 .darkmodebutton button {
     position: relative;
     top: 45%;
+}
+.oNas
+{
+    padding: 15px 50px;
+}
+.oNas>h2{
+    text-align: center;
 }
