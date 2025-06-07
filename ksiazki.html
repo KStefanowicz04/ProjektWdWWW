@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script> 
     <meta charset="UTF-8">
-    <title>Kontakt</title>
+    <title>Zasoby</title>
 
 </head>
 
 <body onload="CheckDarkMode()">
 
-    <!-- Logo,  -->
+    
     <header>
         
         <a href="index.html">
@@ -32,24 +32,51 @@
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Start</a></li>
-            <li><a href="ksiazki.html">Książki</a></li>            
+            <li><a href="ksiazki.html">Książki</a></li>
             <li><a href="wyszukiwanie.html">Wyszukiwanie</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
             <li><a href="o-nas.html">O nas</a></li>
         </ul>
     </nav>
 
-    <!-- Sekcja główna -->
+    
     <main>
 
-        <!-- Sekcja o autorach -->
-        <section class="flex-container">
-            <h2>Autorzy</h2>
-            <p>Łukasz Piotrowski &nbsp 117126 &nbsp <a href="mailto:91849@student.pb.edu.pl">91849@student.pb.edu.pl</a></p>
-            <p>Kacper Stefanowicz &nbsp 117236 &nbsp <a href="mailto:91959@student.pb.edu.pl">91959@student.pb.edu.pl</a></p>
+        <!-- Wyszukiwanie -->
+        <section class="filtrowanie">
+            <h2>Lista książek dostępnych w bibliotece</h2>
+            <input type="text" id="searchInput" placeholder="Wyszukaj tytuł..." />
+            <select id="categorySelect">
+                <option value="">Wszystkie kategorie</option>
+                <option value="Komedia">Komedia</option>
+                <option value="Romans">Romans</option>
+                <option value="Przygodowe">Przygodowe</option>
+                <option value="Kryminał / Thriller">Kryminał / Thriller</option>
+                <option value="Edukacyjne">Edukacyjne</option>
+            </select>
         </section>
 
+    <!-- Lista książek -->
+    <section class="book-list">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tytuł</th>
+                    <th>Autor</th>
+                    <th>Kategoria</th>
+                </tr>
+            </thead>
+
+            <tbody id="book">
+
+            </tbody>
+        </table>
+        
+    </section>
+
     </main>
+
 
     <footer>
         <h2>Łukasz&nbspPiotrowski     Kacper&nbspStefanowicz</h2>
