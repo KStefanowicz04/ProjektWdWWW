@@ -53,6 +53,14 @@ h1 {
     text-align: center; 
 }
 
+h2 {
+    text-align: center; 
+}
+
+p {
+    padding: 15px 50px;
+}
+
 /* Styl tabeli */
 table {
     
@@ -176,19 +184,6 @@ input, select {
     padding: 8px;
     font-size: 16px;
     margin: 5px;
-}
-
-
-
-/* Style dla strony o-nas.html */
-
-/* Klasa oNas */
-.oNas
-{
-    padding: 15px 50px;
-}
-.oNas>h2{
-    text-align: center;
 }
 
 
