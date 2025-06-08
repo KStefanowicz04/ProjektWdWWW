@@ -150,6 +150,19 @@ button:hover {
 
 
 
+/* Style flex-container */
+
+/* Margines wewnętrzny */
+.flex-container{
+    padding: 20px;
+}
+/* Wyrównanie h2 w kontakt */
+.flex-container>h2{
+    text-align: center;
+}
+
+
+
 /* Style dla strony zasoby.html */
 
 /* Sekcja wyszukiwania tytułów na stronie zasoby.html */
@@ -163,6 +176,19 @@ input, select {
     padding: 8px;
     font-size: 16px;
     margin: 5px;
+}
+
+
+
+/* Style dla strony o-nas.html */
+
+/* Klasa oNas */
+.oNas
+{
+    padding: 15px 50px;
+}
+.oNas>h2{
+    text-align: center;
 }
 
 
@@ -224,20 +250,4 @@ input, select {
 .darkmodebutton button {
     position: relative;
     top: 45%;
-}
-/*klasa oNas */
-.oNas
-{
-    padding: 15px 50px;
-}
-.oNas>h2{
-    text-align: center;
-}
-/*margines wewnętrzny */
-.flex-container{
-    padding: 20px;
-}
-/*wyrównanie h2 w kontakt */
-.flex-container>h2{
-    text-align: center;
 }
