@@ -13,9 +13,8 @@
 
 </head>
 
-<body onload="CheckDarkMode()">
+<body onload="indexOnLoad()">
 
-    
     <header>
         <a href="index.html">
             <img src="images/logo.png" alt="Logo Studendorium" id="logo" >
@@ -42,9 +41,29 @@
     <!-- Sekcja główna -->
     <main>
 
-        <!-- Sekcja [] -->
+        <!-- Sekcja Na temat strony -->
         <section>
-            
+            <h2 style="text-align: center">O stronie</h2>
+            <p>Studendorium to strona internetowa udostępniająca listę książek w naszym repozytorium.</p>
+        </section>
+
+        <!-- Sekcja przykładowych książek -->
+        <!-- 3 losowe książki są wybrane z books w script.js i umieszczone w tablicy -->
+        <section>
+            <h2>Trzy losowe książki z repozytorium</h2>
+
+            <table id="los-ksiazki">
+                <thead>
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Autor</th>
+                        <th>Kategoria</th>
+                    </tr>
+                </thead>
+
+                <tbody id="randomBook"></tbody>
+            </table>
+
         </section>
 
     </main>
