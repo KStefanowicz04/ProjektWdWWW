@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="Studentorium – internetowa biblioteka i centrum wiedzy stworzone dla studentów. Przeglądaj książki, zasoby edukacyjne i rozwijaj swoją wiedzę.">
+    <meta name="keywords" content="biblioteka online, książki studenckie, zasoby edukacyjne, wyszukiwanie książek, nauka, studentorium, wiedza, uczelnia, literatura">
+    <meta name="author" content="Łukasz Piotrowski, Kacper Stefanowicz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script> 
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Zasugeruj książkę</title>
+
+</head>
+
+<body onload="sugestieOnLoad()">
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="Logo Studendorium" id="logo" >
+        </a>
+        <h1>Studentorium - Biblioteka i centrum wiedzy dla studentów</h1>
+        <!-- Przycisk Dark Mode -->
+        <div class="darkmodebutton"> 
+            <button onclick="toggleDarkMode()">Dark mode</button>
+        </div>
+        
+    </header>
+
+    <!-- Pasek nawigacji -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="ksiazki.html">Książki</a></li>
+            <li><a href="sugestie.html">Sugestie</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="o-nas.html">O nas</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sekcja główna -->
+    <main>
+
+        <!-- Informacje dla użytkownika -->
+        <section> 
+            <h1>Sugerowanie książek do dodania</h1>
+            <p>
+                W poniższym formularzy możesz zaproponować książkę która może zostać dodana do naszego repozytorium. <br>
+                Podaj autora, tytuł książki, zaznacz kategorię, opcjonalnie podaj więcej informacji.
+            </p>
+        </section>
+
+        <!-- Formularz sugestii -->
+        <section>
+
+            <form id="formularzSugestie">
+                <label for="tytul">Tytuł książki:</label> 
+                <input type="text" id="tytul" name="tytul" required>
+
+                <br> <label for="autor">Autor książki:</label>
+                <input type="text" id="autor" name="autor" required>
+
+                <br> <label>Kategoria:</label>
+                <br> <input type="radio" id="kat1" name="kat" value="Kom" required>
+                <label for="kat1">Komedia</label> <br>
+
+                <input type="radio" id="kat2" name="kat" value="Rom" required>
+                <label for="kat2">Romans</label> <br>
+
+                <input type="radio" id="kat3" name="kat" value="Przyg" required>
+                <label for="kat3">Przygodowe</label> <br>
+
+                <input type="radio" id="kat4" name="kat" value="KrymT" required>
+                <label for="kat4">Kryminał / Thriller</label> <br>
+
+                <input type="radio" id="kat5" name="kat" value="Edu" required>
+                <label for="kat5">Edukacyjne</label> <br>
+
+                <br>
+                <label for="info">Dodatkowe informacje:</label> <br>
+                <textarea id="info" name="info"></textarea>
+
+                </br> <input type="submit" value="Wyślij sugestię">
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <h2>Łukasz&nbspPiotrowski     Kacper&nbspStefanowicz</h2>
+    </footer>
+
+</body>
+
+</html> 

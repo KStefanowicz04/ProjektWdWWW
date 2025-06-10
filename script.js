@@ -98,6 +98,12 @@ function indexOnLoad() {
   CheckDarkMode()
 }
 
+// Funkcja onload dla sugestie.html - połączenie CheckDarkMode() oraz ZaladujSugestie()
+function sugestieOnLoad() {
+  CheckDarkMode()
+  ZaladujSugestie()
+}
+
 
 
 // DarkMode
@@ -114,4 +120,39 @@ function toggleDarkMode() {
   var DarkModeOn = document.body.classList.toggle("dark-mode"); 
 
   localStorage.setItem("DarkMode", DarkModeOn ? "true" : "false");
+}
+
+
+
+
+
+// Formularz - sugestie.html
+function ZaladujSugestie() {
+  document.getElementById("formularzSugestie").addEventListener("submit", wyslijFormularz)
+}
+
+function wyslijFormularz(e) {
+  e.preventDefault();
+
+  // Pobranie danych z formularza
+  const dane = {
+    tytul: document.getElementById("tytul").value,
+    autor: document.getElementById("autor").value,
+    kat: document.querySelector('input[name="kat"]:checked')?.value || "",
+    info: document.getElementById("info").value,
+  }
+
+  // Fetch
+  fetch("http://localhost:3000/propozycje", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(dane)
+  })
+  .then(response => response.json())
+  .then(result => {
+    document.getElementById("formularzSugestie").reset();
+  })
+  .catch(error => {
+    alert("Błąd przy wysyłaniu!", error);
+  })
 }
