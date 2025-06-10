@@ -36,34 +36,64 @@ const books = [
   { title: "Sztuka skutecznego uczenia się", author: "Peter Brown", category: "Edukacyjne" }
 ];
 const tableBody = document.getElementById("book");
-const searchInput = document.getElementById("searchInput");
-const categorySelect = document.getElementById("categorySelect");
+  const searchInput = document.getElementById("searchInput");
+  const categorySelect = document.getElementById("categorySelect");
 
-function renderBooks(list) {
+  let displayedCount = 6; // ile książek aktualnie pokazujemy
+  let currentList = books; // lista po filtrowaniu
+
+  function renderBooks(list) {
     tableBody.innerHTML = "";
-    list.forEach(book => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-     <td>${book.title}</td>
-      <td>${book.author}</td>
-      <td>${book.category}</td>
-    `;
-    tableBody.appendChild(row);
+    const visibleBooks = list.slice(0, displayedCount);
+
+    visibleBooks.forEach(book => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td>${book.category}</td>
+      `;
+      tableBody.appendChild(row);
     });
-}
 
-function filterBooks() {
-  const query = searchInput.value.toLowerCase();
-  const category = categorySelect.value;
-  const filtered = books.filter(book =>
-    book.title.toLowerCase().includes(query) &&
-    (category === "" || book.category === category)
-  );
-  renderBooks(filtered);
-}
+    // Dodaj lub usuń przycisk "Pokaż więcej"
+    let loadMoreBtn = document.getElementById("loadMoreBtn");
+    if (list.length > displayedCount) {
+      if (!loadMoreBtn) {
+        const btnWrapper = document.createElement("div");
+        btnWrapper.classList.add("buttonActive");
+        loadMoreBtn = document.createElement("button");
+        loadMoreBtn.id = "loadMoreBtn";
+        loadMoreBtn.textContent = "Pokaż więcej książek";
+        loadMoreBtn.style.marginTop = "10px";
+        loadMoreBtn.addEventListener("click", () => {
+          displayedCount += 6;
+          renderBooks(currentList);
+        });
+        tableBody.parentElement.appendChild(loadMoreBtn);
+      }
+    } else if (loadMoreBtn) {
+      loadMoreBtn.remove();
+    }
+  }
 
-searchInput.addEventListener("input", filterBooks);
-categorySelect.addEventListener("change", filterBooks);
+  function filterBooks() {
+    const query = searchInput.value.toLowerCase();
+    const category = categorySelect.value;
+    displayedCount = 6; // resetujemy licznik przy filtrowaniu
+
+    currentList = books.filter(book =>
+      book.title.toLowerCase().includes(query) &&
+      (category === "" || book.category === category)
+    );
+    renderBooks(currentList);
+  }
+
+  searchInput.addEventListener("input", filterBooks);
+  categorySelect.addEventListener("change", filterBooks);
+
+  // Początkowe renderowanie
+  renderBooks(books);
 
 
 renderBooks(books)
