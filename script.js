@@ -183,6 +183,15 @@ function wyslijFormularz(e) {
     document.getElementById("formularzSugestie").reset();
   })
   .catch(error => {
-    alert("Błąd przy wysyłaniu!", error);
+    if (error.name === "TypeError") {
+      console.error("Błąd sieci:", error.message)
+
+    }
+    else {
+      console.error("Błąd:", error.message)
+    }
+
+  alert("Błąd przy wysyłaniu!", error);
+
   })
 }

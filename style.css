@@ -100,6 +100,10 @@ button:hover {
     box-shadow: 2px 2px 2px #0f172a;
 }
 
+/* Styl formularzy */
+input[type=text], input[type=submit], textarea {
+    border-radius:  8px;
+}
 
 
 /* Górny pasek strony - logo, tytuł, pasek nawigacji */
@@ -172,9 +176,9 @@ button:hover {
 
 
 
-/* Style dla strony zasoby.html */
+/* Style dla strony ksiazki.html */
 
-/* Sekcja wyszukiwania tytułów na stronie zasoby.html */
+/* Sekcja wyszukiwania tytułów na stronie ksiazki.html */
 .filtrowanie { 
     margin-bottom: 20px; 
     text-align: center; 
@@ -185,6 +189,13 @@ input, select {
     padding: 8px;
     font-size: 16px;
     margin: 5px;
+}
+
+
+
+/* Style dla sugestie.html */
+#formularzSugestie {
+    margin: 30px;
 }
 
 
@@ -230,6 +241,14 @@ input, select {
 .dark-mode {
   background-color: #1d1d1d;
   color: #d9d9d9;
+
+  /* Dla inputów */
+  input[type=text], input[type=submit], textarea {
+    background-color: #2757dc;
+    color:#f2f2f2;
+    border-color:#183072;
+  }
+
 }
 
 /* Dark mode stopki */
