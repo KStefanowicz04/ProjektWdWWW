@@ -36,68 +36,61 @@ const books = [
   { title: "Sztuka skutecznego uczenia się", author: "Peter Brown", category: "Edukacyjne" }
 ];
 const tableBody = document.getElementById("book");
-  const searchInput = document.getElementById("searchInput");
-  const categorySelect = document.getElementById("categorySelect");
+const searchInput = document.getElementById("searchInput");
+const categorySelect = document.getElementById("categorySelect");
+let displayedCount = 6;
+let currentList = books;
 
-  let displayedCount = 6; // ile książek aktualnie pokazujemy
-  let currentList = books; // lista po filtrowaniu
+// Wyświetlanie książek
+function renderBooks(list) {
+  tableBody.innerHTML = "";
+  const visibleBooks = list.slice(0, displayedCount);
 
-  function renderBooks(list) {
-    tableBody.innerHTML = "";
-    const visibleBooks = list.slice(0, displayedCount);
+  visibleBooks.forEach(book => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${book.title}</td>
+      <td>${book.author}</td>
+      <td>${book.category}</td>
+    `;
+    tableBody.appendChild(row);
+  });
 
-    visibleBooks.forEach(book => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${book.title}</td>
-        <td>${book.author}</td>
-        <td>${book.category}</td>
-      `;
-      tableBody.appendChild(row);
+  const buttonContainer = document.getElementById("buttonContainer");
+  buttonContainer.innerHTML = ""; // Czyścimy poprzedni przycisk
+
+  if (list.length > displayedCount) {
+    const loadMoreBtn = document.createElement("button");
+    loadMoreBtn.id = "loadMoreBtn";
+    loadMoreBtn.textContent = "Pokaż więcej książek";
+    loadMoreBtn.style.marginTop = "10px";
+
+    loadMoreBtn.addEventListener("click", () => {
+      displayedCount += 6;
+      renderBooks(currentList);
     });
 
-    // Dodaj lub usuń przycisk "Pokaż więcej"
-    let loadMoreBtn = document.getElementById("loadMoreBtn");
-    if (list.length > displayedCount) {
-      if (!loadMoreBtn) {
-        const btnWrapper = document.createElement("div");
-        btnWrapper.classList.add("buttonActive");
-        loadMoreBtn = document.createElement("button");
-        loadMoreBtn.id = "loadMoreBtn";
-        loadMoreBtn.textContent = "Pokaż więcej książek";
-        loadMoreBtn.style.marginTop = "10px";
-        loadMoreBtn.addEventListener("click", () => {
-          displayedCount += 6;
-          renderBooks(currentList);
-        });
-        tableBody.parentElement.appendChild(loadMoreBtn);
-      }
-    } else if (loadMoreBtn) {
-      loadMoreBtn.remove();
-    }
+    buttonContainer.appendChild(loadMoreBtn);
   }
+}
 
-  function filterBooks() {
-    const query = searchInput.value.toLowerCase();
-    const category = categorySelect.value;
-    displayedCount = 6; // resetujemy licznik przy filtrowaniu
+// Filtrowanie książek
+function filterBooks() {
+  const query = searchInput.value.toLowerCase();
+  const category = categorySelect.value;
+  displayedCount = 6;
 
-    currentList = books.filter(book =>
-      book.title.toLowerCase().includes(query) &&
-      (category === "" || book.category === category)
-    );
-    renderBooks(currentList);
-  }
+  currentList = books.filter(book =>
+    book.title.toLowerCase().includes(query) &&
+    (category === "" || book.category === category)
+  );
 
-  searchInput.addEventListener("input", filterBooks);
-  categorySelect.addEventListener("change", filterBooks);
+  renderBooks(currentList);
+}
 
-  // Początkowe renderowanie
+// Początkowe ładowanie
+
   renderBooks(books);
-
-
-renderBooks(books)
-
 
 
 // Losowanie 3 książek i umiesczenie ich w tablicy  na stronie głównej

@@ -266,3 +266,8 @@ input, select {
     position: relative;
     top: 45%;
 }
+.buttonActive{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
