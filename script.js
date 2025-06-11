@@ -87,6 +87,8 @@ function filterBooks() {
 
   renderBooks(currentList);
 }
+searchInput.addEventListener("input", filterBooks);
+categorySelect.addEventListener("change", filterBooks);
 
 // Początkowe ładowanie
 
